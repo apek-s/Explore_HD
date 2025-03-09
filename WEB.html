@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore HD</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #9333ea;
+            --accent-color: #facc15;
+            --text-color: #e5e7eb;
+            --bg-color: #0f172a;
+            --shadow-color: rgba(148, 163, 184, 0.5);
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, var(--bg-color), #1e293b);
+            color: var(--text-color);
+        }
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px var(--shadow-color);
+            z-index: 1000;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s, transform 0.2s;
+        }
+        nav ul li a:hover {
+            color: var(--accent-color);
+            transform: scale(1.1);
+        }
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            text-shadow: 3px 3px 10px var(--shadow-color);
+        }
+        .btn {
+            background: var(--accent-color);
+            padding: 12px 25px;
+            margin-top: 20px;
+            color: black;
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px var(--shadow-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .btn:hover {
+            background: #eab308;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px var(--shadow-color);
+        }
+        section {
+            padding: 100px 50px;
+            text-align: center;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+            color: white;
+            box-shadow: 0 -4px 10px var(--shadow-color);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Explore HD</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>Welcome to Explore HD</h1>
+        <p>Discover the best routes, food places, and more!</p>
+        <a href="#about" class="btn">Start Exploring</a>
+    </section>
+
+    <section id="about" data-aos="fade-up">
+        <h2>About</h2>
+        <p>Explore HD helps you navigate Hubli-Dharwad with ease.</p>
+    </section>
+
+    <section id="projects" data-aos="fade-left">
+        <h2>Discover</h2>
+        <p>Find the best routes, bus stops, and food spots in town.</p>
+    </section>
+
+    <section id="contact" data-aos="fade-right">
+        <h2>Contact</h2>
+        <p>Get in touch for suggestions and updates.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Explore HD. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        AOS.init();
+        gsap.from(".hero h1", { opacity: 0, y: -50, duration: 1 });
+        gsap.from(".hero p", { opacity: 0, y: 30, duration: 1, delay: 0.5 });
+        gsap.from(".btn", { opacity: 0, scale: 0.8, duration: 0.5, delay: 1 });
+        gsap.from("nav ul li", { opacity: 0, y: -20, duration: 0.5, stagger: 0.2 });
+        gsap.from("section", { opacity: 0, scale: 0.9, duration: 1, stagger: 0.3 });
+    </script>
+</body>
+</html>
